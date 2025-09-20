@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Find Food</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css">
+    <script th:src="'https://maps.googleapis.com/maps/api/js?key=' + ${googleMapsApiKey} + '&libraries=places'"></script>
+    <script src="js/home.js" defer></script>
+</head>
+
+<body>
+  <div class="container" id="c1">
+    <div class="row">
+        <h1>Welcome <span id="user-id"></span>!</h1>
+        <h2>Find Food</h2>
+        <div>
+            <input id="location-input" type="text" placeholder="Enter your location...">
+            <button id="search-button" class="btn btn-primary" onclick="beginSearch()">Search</button>
+        </div>        
+		<div id="map"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Request Food Listing</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/quantity-request.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Request Food Listing</h1>
+
+        <div>
+            <h3>Listing Details:</h3>
+            <p><strong>Food Type:</strong> <span th:text="${foodType}"></span></p>
+            <p><strong>Quantity:</strong> <span th:text="${quantityListed}"></span></p>
+            <p><strong>Earliest Pickup Time:</strong> <span th:text="${formattedPickUpTime}"></span></p>
+            <p><strong>Location:</strong> <span th:text="${latitude + ', ' + longitude}"></span></p>
+        </div>
+
+        <div id="alert" class="alert not-visible">
+            <p></p>
+        </div>
+
+        <!-- Form to submit the food request -->
+        <form id="food-request-form">
+            <input type="hidden" name="listingId" th:value="${listingId}" />
+            <div class="form-group">
+                <label for="quantityRequested">Quantity to Request:</label>
+                <input type="number" class="form-control" id="quantityRequested" name="quantityRequested" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+        </form>
+
+        <button class="btn btn-success" onclick="goBackToSearch()">Back to Search</button>
+    </div>
+
+    <!-- These define the Thymeleaf variables for use in external JavaScript. -->
+    <script th:inline="javascript">
+    /*<![CDATA[*/
+    const latitude = [[${latitude}]];
+    const longitude = [[${longitude}]];
+    /*]]>*/
+    </script>
+    <script src="js/quantity-request.js"></script>
+</body>
+</html>

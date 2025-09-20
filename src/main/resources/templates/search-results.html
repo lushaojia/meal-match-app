@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Food Results</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Available Food Listings</h1>
+
+        <!-- Display a message if there are no listings -->
+        <div th:if="${foodListings.size() == 0}" class="alert alert-warning">
+            <p>No food listings are currently available. Please check back later.</p>
+        </div>
+
+        <!-- Table to display food listings -->
+        <table class="table table-striped" th:if="${foodListings.size() > 0}">
+            <thead>
+                <tr>
+                    <th>Food Type</th>
+                    <th>Quantity</th>
+                    <th>Earliest Pickup Time</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="listing : ${foodListings}">
+                    <td th:text="${listing.foodType}"></td>
+                    <td th:text="${listing.quantityListed}"></td>
+                    <td th:text="${listing.formattedPickUpTime}"></td>
+                    <td th:text="${listing.formattedAddress}"></td>
+					<td>
+						<form action="/quantity-request" method="post">
+							<input type="hidden" name="listingId" th:value="${listing.listingId}" />
+							<input type="hidden" name="foodType" th:value="${listing.foodType}" />
+							<input type="hidden" name="quantityListed" th:value="${listing.quantityListed}" />
+							<input type="hidden" name="formattedPickUpTime" th:value="${listing.formattedPickUpTime}" />
+							<input type="hidden" name="latitude" th:value="${listing.latitude}" />
+							<input type="hidden" name="longitude" th:value="${listing.longitude}" />
+							<button type="submit" class="btn btn-success">Select</button>
+						</form>
+					</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Back button -->
+        <button class="btn btn-primary" onclick="goBack()">Back to Home</button>
+    </div>
+
+    <script>
+        // Function to handle listing selection
+        function selectListing(listingId) {
+			window.location.href = "/quantity-request?listingId=" + listingId;
+        }
+
+        // Navigate back to the home screen.
+        function goBack() {
+            window.location.href = "/home";
+        }
+    </script>
+</body>
+</html>
