@@ -6,6 +6,11 @@ This project was developed collaboratively with three other students for COMS 41
 ## 🔗 Try it out!
 [https://meal-match-app-1012636713829.us-east1.run.app](https://meal-match-app-1012636713829.us-east1.run.app)
 
+1. You can register a new account and use these credentials to log in, or use an existing username `test` with password `testtest`.
+2. Type in `Lulu Chow Wang Campus Center` and click `Search`.
+3. Pick a listing of your choosing and request some items from it.
+4. Click on `Back to Search` to see the quantity listed change. You've successfully made a request for a listing!
+
 
 ## ☎️ External API Used for the Backend
 - **Meal Match API** is used to find food listings around a given location and allow the user to request items from listings.
@@ -13,9 +18,3 @@ This project was developed collaboratively with three other students for COMS 41
 - **Google Maps JavaScript API** is used in the frontend to create an interactive map, enable location autocomplete, and handle map interactions
 - **Google Maps Places** library provides the autocomplete functionality for location input
 - **Google Maps Geocoding API** is used in the backend to reverse geocode coordinates into formatted addresses
-
-## 🧪 Test it out!
-1. You can register a new account and use these credentials to log in, or use an existing username `test` with password `testtest`.
-2. Type in `Lulu Chow Wang Campus Center` and click `Search`.
-3. Pick a listing of your choosing and request some items from it.
-4. Click on `Back to Search` to see the quantity listed change. s
