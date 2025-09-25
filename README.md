@@ -1,5 +1,7 @@
 # Meal Match App
-This app provides a platform for users to browse "food listings" posted by restaurants, grocery stores, and other establishments with surplus food. It provides a user-friendly interface that users can navigate to create an account, sign in, and browse nearby food listings. Users can either enter their location manually or navigate via an integrated Google Maps interface to find listings in their area. Once they locate a suitable listing, they can view details about the available food and submit a request to claim it.
+Meal Match is a platform that connects users with surplus food donated by restaurants, grocery stores, and other establishments. The app provides a user-friendly interface for creating an account, signing in, and browsing nearby food listings. Users can enter their location manually or use the integrated Google Maps interface to discover available listings. Once a listing is selected, they can view details and submit a request to claim the food.
+
+The app’s backend leverages the [Meal-Match API](https://github.com/lushaojia/meal-match-api), which supports geospatial queries to find nearby food listings and updates listing availability as items are requested.
 
 This project was developed collaboratively with three other students for COMS 4156 - Advanced Software Engineering at Columbia University.
 
@@ -13,7 +15,7 @@ This project was developed collaboratively with three other students for COMS 41
 
 
 ## ☎️ External API Used for the Backend
-- **Meal Match API** is used to find food listings around a given location and allow the user to request items from listings.
+- **[Meal-Match API](https://github.com/lushaojia/meal-match-api)** is used to find food listings around a given location and allow the user to request items from listings.
 - **Google Firebase Authentication** is used for persistent storage and verification of user credentials. 
 - **Google Maps JavaScript API** is used in the frontend to create an interactive map, enable location autocomplete, and handle map interactions
 - **Google Maps Places** library provides the autocomplete functionality for location input
