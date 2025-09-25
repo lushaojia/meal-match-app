@@ -3,7 +3,7 @@ This app provides a platform for users to browse "food listings" posted by resta
 
 This project was developed collaboratively with three other students for COMS 4156 - Advanced Software Engineering at Columbia University.
 
-## 🔗 Live URL
+## 🔗 Try it out!
 [https://meal-match-app-1012636713829.us-east1.run.app](https://meal-match-app-1012636713829.us-east1.run.app)
 
 
